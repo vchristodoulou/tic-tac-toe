@@ -1,0 +1,47 @@
+<div class="container" style="height:100%">
+  <div class="row align-items-center" style="height:100%">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-5 text-center">
+          <p *ngIf="xIsNext; then thenBlock else elseBlock"></p>
+          <ng-template #thenBlock>
+            {{game.playerNames[0]}}
+            <span class="badge badge-info mx-1">X</span>
+            turn
+          </ng-template>
+          <ng-template #elseBlock>
+            {{game.playerNames[1]}}
+            <span class="badge badge-info mx-1">O</span>
+            turn
+          </ng-template>
+        </div>
+      </div>
+      <app-board [(xIsNext)]="xIsNext" class="row justify-content-center"></app-board>
+      <hr class="col-md-6"/>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="row justify-content-between">
+            <div class="col-md-4 text-center text-break">
+              <p>
+                {{game.playerNames[0]}}
+                <span class="badge badge-info ml-2">X</span>
+              </p>
+              <p>{{game.playerWins[0]}}</p>
+            </div>
+            <div class="col-md-4 text-center text-break">
+              <p>
+                {{game.playerNames[1]}}
+                <span class="badge badge-info ml-2">O</span>
+              </p>
+              <p>{{game.playerWins[1]}}</p>
+            </div>
+            <div class="col-md-4 text-center text-break">
+              <p>Total Rounds</p>
+              <p>{{game.roundsTotal}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

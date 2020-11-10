@@ -1,0 +1,12 @@
+main {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 0px;
+}
+
+app-square {
+  border-color: black;
+  border-style: solid;
+  height: 100px;
+  text-align: center;
+}
