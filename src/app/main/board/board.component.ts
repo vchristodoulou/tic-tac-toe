@@ -16,7 +16,7 @@ export class BoardComponent implements OnInit {
   squaresStyle: Array<{ [key: string]: string}>;
   gameSub: Subscription;
 
-  constructor(private gameStoreService: GameStoreService) { }
+  constructor(private gameStoreService: GameStoreService) {}
 
   ngOnInit(): void {
     this.squares = Array(9).fill('');
@@ -73,5 +73,4 @@ export class BoardComponent implements OnInit {
     this.xIsNext = !this.xIsNext;
     this.xIsNextChange.emit(this.xIsNext);
   }
-
 }

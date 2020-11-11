@@ -22,16 +22,7 @@ export class MainComponent implements OnInit {
     this.xIsNext = true;
     this.gameSub = this.gameStoreService.game$
       .subscribe(res => {
-        console.log(res);
         this.game = res;
-        console.log(this.game);
       });
-    console.log(this.gameStoreService.getGame());
   }
-
-  playerTurnChange(xIsNext: boolean): void {
-    console.log(xIsNext);
-    this.xIsNext = xIsNext;
-  }
-
 }

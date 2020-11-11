@@ -3,16 +3,20 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 mb-5 text-center">
-          <p *ngIf="xIsNext; then thenBlock else elseBlock"></p>
+          <div *ngIf="xIsNext; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
-            {{game.playerNames[0]}}
-            <span class="badge badge-info mx-1">X</span>
-            turn
+            <h2>
+              {{game.playerNames[0]}}
+              <span class="badge badge-info mx-1">X</span>
+              turn
+            </h2>
           </ng-template>
           <ng-template #elseBlock>
-            {{game.playerNames[1]}}
-            <span class="badge badge-info mx-1">O</span>
-            turn
+            <h2>
+              {{game.playerNames[1]}}
+              <span class="badge badge-info mx-1">O</span>
+              turn
+            </h2>
           </ng-template>
         </div>
       </div>
@@ -20,7 +24,7 @@
       <hr class="col-md-6"/>
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <div class="row justify-content-between">
+          <div class="row justify-content-around">
             <div class="col-md-4 text-center text-break">
               <p>
                 {{game.playerNames[0]}}
@@ -34,10 +38,6 @@
                 <span class="badge badge-info ml-2">O</span>
               </p>
               <p>{{game.playerWins[1]}}</p>
-            </div>
-            <div class="col-md-4 text-center text-break">
-              <p>Total Rounds</p>
-              <p>{{game.roundsTotal}}</p>
             </div>
           </div>
         </div>
