@@ -46,6 +46,19 @@ export class GameStoreService {
     } else if (playerSymbol === 'O') {
       newGame.playerWins[1] += 1;
     }
-    this.game = new Game(newGame);
+    this.game = newGame;
+  }
+
+  updatePlayerNames(playerNameOne: string, playerNameTwo: string): void {
+    const newGame = this.newGame();
+    newGame.playerNames = [playerNameOne, playerNameTwo];
+    this.game = newGame;
+  }
+
+  resetWins(): void {
+    const newGame = this.newGame();
+    newGame.roundsTotal = 0;
+    newGame.playerWins = [0, 0];
+    this.game = newGame;
   }
 }

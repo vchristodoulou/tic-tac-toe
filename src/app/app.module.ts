@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,9 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { BoardComponent } from './main/board/board.component';
 import { SquareComponent } from './main/square/square.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { SettingsComponent } from './settings/settings.component';
+
 
 @NgModule({
   declarations: [
@@ -14,10 +18,14 @@ import { SquareComponent } from './main/square/square.component';
     MainComponent,
     HeaderComponent,
     BoardComponent,
-    SquareComponent
+    SquareComponent,
+    StatisticsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
